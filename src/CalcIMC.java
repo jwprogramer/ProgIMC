@@ -1,25 +1,25 @@
 
 public class CalcIMC {
 
-	public static void calcular(double d) {
-        if (d < 18.5)
-            System.out.println ("Abaixo do peso ideal");
-        else
-            if ((d > 18.5) &&(d <24.9))
-                System.out.println ("Voce esta no peso ideal");
-        else
-                if ((d > 25.0)&& (d <29.9))
-                    System.out.println("Voce está com excesso de peso");
-        else
-                    if ((d > 30.0) && (d <34.9))
-                    System.out.println("Obesidade Classe I");
-        else
-                        if ((d > 35.0) && (d <39.9))
-                            System.out.println ("Obesidade Classe II");
-        else 
-                            if (d >= 40)
-                                System.out.println ("Obesidade Classe III");
-                                  
-    }
+	public String calculaIMC(double peso, double altura) {
+		 
+		double imc = peso / (altura * altura);
+		
+		String resultado = "";
+		
+		if (imc < 18.5) {
+		    resultado = "Seu IMC é " + imc + " e você está abaixo do peso.";
+		  } else if (imc >= 18.5 && imc < 25) {
+		    resultado = "Seu IMC é " + imc + " e você está com o peso normal.";
+		  } else if (imc >= 25 && imc < 30) {
+		    resultado = "Seu IMC é " + imc + " e você está acima do peso.";
+		  } else {
+		    resultado = "Seu IMC é " + imc + " e você está obeso.";
+		  }
+	
+		return resultado;
+	}
+	
 	
 }
+

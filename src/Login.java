@@ -1,25 +1,14 @@
 
 public class Login {
 
-	static boolean verifica = false;
-	public static boolean entrar(int valor) {
+	public boolean entrar(int senha) {
 		
-		while(verifica = false) {
-			if(valor == 123) {
-				verifica =  true;
+	int minhaSenha = 123;
+			if(minhaSenha == senha) {
+				return true;
+			}else{
+				return false;
 			}
-			
-			System.out.printf("Tente novamente!");
-			
-	    }
-		return verifica;
 	}
-	public void sair() {
-		verifica = false;
-	}
-	
-	public static void main(String[] args) {
-			
-			entrar(222);	
-	}
+
 }

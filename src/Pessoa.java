@@ -2,13 +2,13 @@
 public class Pessoa {
 
 	
-	String Nome;
-	String Email;
-	int Telefone;
-	int Idade;
-	Double Peso;
-	Double Altura;
-	String AlertaIMC;
+	private String Nome;
+	private String Email;
+	private int Telefone;
+	private int Idade;
+	private double Peso;
+	private double Altura;
+	private String AlertaIMC;
 	
 	public String getNome() {
 		return Nome;
