@@ -1,4 +1,3 @@
-
 public class Pessoa {
 
 	
@@ -8,8 +7,10 @@ public class Pessoa {
 	private int Idade;
 	private double Peso;
 	private double Altura;
+	private double IMC;
 	private String AlertaIMC;
 	
+		
 	public String getNome() {
 		return Nome;
 	}
@@ -46,6 +47,15 @@ public class Pessoa {
 	public void setAltura(double altura) {
 		Altura = altura;
 	}
+	
+	public double getIMC() {
+		return IMC;
+	}
+
+	public void setIMC(double imc) {
+		IMC = imc;
+	}
+
 	public String getAlertaIMC() {
 		return AlertaIMC;
 	}
@@ -53,7 +63,9 @@ public class Pessoa {
 		AlertaIMC = alertaIMC;
 	}
 	
-	
-	
-	
+	@Override
+    public String toString() {
+        return "Nome: " + getNome() + "\nE-mail: " + getEmail() + "\nTelefone: " + getTelefone() + "\nIdade: " + getIdade() 
+        		+ "\nPeso: " + getPeso() + "\nAltura: " + getAltura() + "\nIMC: " + getIMC() + "\nAlerta: " + getAlertaIMC();
+	}
 }

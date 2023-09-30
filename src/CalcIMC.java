@@ -1,10 +1,12 @@
 
 public class CalcIMC {
 
-	public String calculaIMC(double peso, double altura) {
-		 
-		double imc = peso / (altura * altura);
-		
+	public double resultadoIMC(double peso, double altura) {
+		return peso / (altura * altura);
+	}
+
+	public String calculaIMC(double imc) {
+ 		
 		String resultado = "";
 		
 		if (imc < 18.5) {
@@ -19,7 +21,5 @@ public class CalcIMC {
 	
 		return resultado;
 	}
-	
-	
 }
 
