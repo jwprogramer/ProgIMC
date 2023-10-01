@@ -9,34 +9,34 @@ public class app {
 		int inicio = 0;
 		Scanner scanner = new Scanner(System.in);
 		Login log = new Login();
-		listagemPessoas lista = new listagemPessoas();
 		Pessoa pessoa = new Pessoa();
 		CalcIMC calc = new CalcIMC();
 		ArrayList<Pessoa> pessoas = new ArrayList<>();
-
+		int senha = 0;
 		
         while (true) {
         	
         	if(inicio == 0) {
         		
         		System.out.println("Informe sua senha: ");
-                int senha = scanner.nextInt();
-                inicio = 1;
-      
+                senha = scanner.nextInt();
+                
+        	}
             if (log.entrar(senha)) {
             	
             	if(logado){
             	System.out.println("Login realizado com sucesso!");
-            	System.out.println("Sistema de Gestão de Pessoas");
-            	logado = false;
             	}
+            	
+            	System.out.println("Sistema de Gestão de Pessoas");
+            	System.out.println("MENU - PRINCIPAL");
             	System.out.println("1 - Cadastrar");
                 System.out.println("2 - Listar");
                 System.out.println("3 - Sair");
                 System.out.println("4 - Fechar Sistema");
 
                 int opcao = scanner.nextInt();
-
+                inicio = 1;
                 switch (opcao) {
                     case 1:
                         System.out.println("Cadastrar pessoa");
@@ -68,11 +68,11 @@ public class app {
                         pessoas.add(pessoa);
                         break;
                     case 2:
-                        System.out.println("Listar pessoas");
                         System.out.println("Pessoas cadastradas:");
                         for (Pessoa p : pessoas) {
                             System.out.println(p);
                         }
+                        logado = false;
                         break;
                     case 3:
                         System.out.println("Logout...");
@@ -88,11 +88,9 @@ public class app {
             
             }else {
             	System.out.println("Senha incorreta! Tente novamente...");
-            	System.out.println("Informe sua senha: ");
-                senha = scanner.nextInt();
                 inicio = 0;
             }
-        	}	
+        	
         }
     }
 

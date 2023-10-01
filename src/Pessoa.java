@@ -66,6 +66,7 @@ public class Pessoa {
 	@Override
     public String toString() {
         return "Nome: " + getNome() + "\nE-mail: " + getEmail() + "\nTelefone: " + getTelefone() + "\nIdade: " + getIdade() 
-        		+ "\nPeso: " + getPeso() + "\nAltura: " + getAltura() + "\nIMC: " + getIMC() + "\nAlerta: " + getAlertaIMC();
+        		+ "\nPeso: " + getPeso() + "\nAltura: " + getAltura() + "\nIMC: " + getIMC() + "\nAlerta: " + getAlertaIMC()
+        		+ "\n--------------------------------------------";
 	}
 }
