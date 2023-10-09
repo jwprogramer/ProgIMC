@@ -2,17 +2,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class testCadastro {
     
-	Pessoa pessoa = new Pessoa();
-	CalcIMC calcIMC = new CalcIMC();
-	ArrayList<Pessoa> pessoas = new ArrayList<>();
+	private Pessoa pessoa;
+    private CalcIMC calcIMC;
+    private ArrayList<Pessoa> pessoas;
+    private double resultado;
 	
-	@Test
-    public void testCadastroPessoa() {
-        
+	
+	@BeforeEach
+    public void init() {
+        pessoa = new Pessoa();
+        calcIMC = new CalcIMC();
+        pessoas = new ArrayList<>();
+
         pessoa.setNome("John");
         pessoa.setEmail("john@example.com");
         pessoa.setTelefone(123456789);
@@ -22,9 +28,14 @@ public class testCadastro {
         pessoa.setIMC(20.45288531775018);
         pessoas.add(pessoa);
 
-        double resultado = calcIMC.resultadoIMC(pessoa.getPeso(), pessoa.getAltura());
-        assertEquals(resultado, pessoa.getIMC());
+        resultado = calcIMC.resultadoIMC(pessoa.getPeso(), pessoa.getAltura());
+    }
+      
 
+	@Test
+    public void testCadastroPessoa() {
+		assertEquals(resultado, pessoa.getIMC());
+      
         assertEquals(1, pessoas.size());
         assertEquals("John", pessoas.get(0).getNome());
     }
